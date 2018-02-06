@@ -480,6 +480,15 @@ function receivedMessage(event) {
 		//sendTextMessage(senderID, "color\?");
 		//console.log(5);
 		//break;
+	case 'fmlogo':
+	case 'fm logo':
+	case 'formyanmar logo':
+	sendTestImageMessage(senderID, "/fmlogo/fmlogo.jpg");
+	break;
+
+	case 'vaseline':
+	sendTestImageMessage(senderID, "/memphoto/vaseline.jpg");
+	break;
 
       case 'government listing':
       case 'government contact':
@@ -949,12 +958,12 @@ function receivedMessage(event) {
     if (message.attachments[0].type == "image"){
 	var messageAttachmenturl = "\"" + message.attachments[0].payload.url + "\"";
 	var my_random_string = chance.first();
-	shell.exec('wget --accept .jpg,.jpeg --cookies=on -p ' + messageAttachmenturl + ' -O ../mynodeapp/public/' + my_random_string + '.jpg', function(code, stdout, stderr) {
+	shell.exec('wget --accept .jpg,.jpeg --cookies=on -p ' + messageAttachmenturl + ' -O public/' + my_random_string + '.jpg', function(code, stdout, stderr) {
   		console.log('Exit code:', code);
   		console.log('Program output:', stdout);
 		readLastLines.read('/home/soepaing/.pm2/logs/devbot-error-0.log', 5)
     			.then((lines) => sendTextMessage(senderID, lines));
-          sendTextMessage(senderID, "The photo was saved to https\:\/\/health\.formyanmar\.tk\/" + my_random_string + "\.jpg" );
+          sendTextMessage(senderID, "The photo was saved to https\:\/\/developbot\.formyanmar\.tk\/" + my_random_string + "\.jpg" );
 		//var wgetjson = JSON.parse(stderr);
   		//console.log('Program stderr:', wgetjson);
 		//sendTextMessage(senderID, stdout);
