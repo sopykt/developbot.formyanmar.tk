@@ -963,7 +963,7 @@ function receivedMessage(event) {
   		console.log('Program output:', stdout);
 		readLastLines.read('/home/soepaing/.pm2/logs/devbot-error-0.log', 5)
     			.then((lines) => sendTextMessage(senderID, lines));
-          sendTextMessage(senderID, "The photo was saved to https\:\/\/developbot-formyanmar-tk\.herokuapp\.com\/" + my_random_string + "\.jpg" );
+          sendTextMessage(senderID, "The photo was saved to " + SERVER_URL + my_random_string + "\.jpg" );
 		//var wgetjson = JSON.parse(stderr);
   		//console.log('Program stderr:', wgetjson);
 		//sendTextMessage(senderID, stdout);
