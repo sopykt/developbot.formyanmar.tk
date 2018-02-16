@@ -480,6 +480,10 @@ function receivedMessage(event) {
 		//sendTextMessage(senderID, "color\?");
 		//console.log(5);
 		//break;
+		case 'g6pd':
+		sendTestImageMessage(senderID, "/Jeanette.jpg");
+		break;
+		    
 	case 'fmlogo':
 	case 'fm logo':
 	case 'formyanmar logo':
