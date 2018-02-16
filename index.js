@@ -481,7 +481,7 @@ function receivedMessage(event) {
 		//console.log(5);
 		//break;
 		case 'g6pd':
-		sendTestImageMessage(senderID, "/Jeanette.jpg");
+		sendTestImageMessage(senderID, "Jeanette.jpg");
 		break;
 		    
 	case 'fmlogo':
