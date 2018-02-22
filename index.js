@@ -972,8 +972,8 @@ function receivedMessage(event) {
 	shell.exec('wget --accept .jpg,.jpeg --cookies=on -p ' + messageAttachmenturl + ' -O public/' + my_random_string + '.jpg', function(code, stdout, stderr) {
   		console.log('Exit code:', code);
   		console.log('Program output:', stdout);
-		readLastLines.read('/home/soepaing/.pm2/logs/devbot-error-0.log', 5)
-    			.then((lines) => sendTextMessage(senderID, lines));
+		//readLastLines.read('/home/soepaing/.pm2/logs/devbot-error-0.log', 5)
+    	//		.then((lines) => sendTextMessage(senderID, lines));
           sendTextMessage(senderID, "The photo was saved to " + SERVER_URL + my_random_string + "\.jpg" );
           cloudinary.uploader.upload("public/" + my_random_string + "\.jpg", function(result) {
             console.log(result);
