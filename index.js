@@ -19,6 +19,13 @@ const serveStatic = require('serve-static')
 const shell = require('shelljs');
 const Chance = require('chance');
 var chance = new Chance();
+// Add cloudinary and it's config
+const cloudinary = require('cloudinary');
+cloudinary.config({
+  cloud_name: 'hdhsnzuu1',
+  api_key: '246617786681966',
+  api_secret: 'Zwcz2YP0rX-epxNVShfD8HgTNMA'
+});
 
 // Load ReadLastLines
 const readLastLines = require('read-last-lines');
@@ -483,7 +490,7 @@ function receivedMessage(event) {
 		case 'g6pd':
 		sendTestImageMessage(senderID, "Jeanette.jpg");
 		break;
-		    
+
 	case 'fmlogo':
 	case 'fm logo':
 	case 'formyanmar logo':
@@ -968,6 +975,9 @@ function receivedMessage(event) {
 		readLastLines.read('/home/soepaing/.pm2/logs/devbot-error-0.log', 5)
     			.then((lines) => sendTextMessage(senderID, lines));
           sendTextMessage(senderID, "The photo was saved to " + SERVER_URL + my_random_string + "\.jpg" );
+          cloudinary.uploader.upload("public/" + my_random_string + "\.jpg", function(result) {
+            console.log(result)
+           });
 		//var wgetjson = JSON.parse(stderr);
   		//console.log('Program stderr:', wgetjson);
 		//sendTextMessage(senderID, stdout);
@@ -1335,7 +1345,7 @@ function sendTextMessage(recipientId, messageText) {
 function sendTestTextMessage(messageText) {
   var messageData = {
     recipient: {
-// my id     
+// my id
 id: "1487429057934939"
 // may may id
 // id: "1329664593737348"
