@@ -487,8 +487,8 @@ function receivedMessage(event) {
 		//sendTextMessage(senderID, "color\?");
 		//console.log(5);
 		//break;
-		case 'g6pd':
-		sendTestImageMessage(senderID, "Jeanette.jpg");
+		case 'cloudinary':
+		sendCloudinaryImage(senderID, "Jeanette.jpg");
 		break;
 
 	case 'fmlogo':
@@ -1376,6 +1376,25 @@ function sendTestImageMessage(recipientId, imageurl)	{
 				type:"image",
 				payload:{
 					url:SERVER_URL+imageurl
+				}
+			}
+		}
+	};
+
+	callSendAPI(messageData);
+}
+
+// send image from cloudinary
+function sendCloudinaryImage(recipientId, imageurl)	{
+	var messageData = {
+		recipient: {
+			id: recipientId
+		},
+		message: {
+			attachment:{
+				type:"image",
+				payload:{
+					url:imageurl
 				}
 			}
 		}
