@@ -976,7 +976,8 @@ function receivedMessage(event) {
     			.then((lines) => sendTextMessage(senderID, lines));
           sendTextMessage(senderID, "The photo was saved to " + SERVER_URL + my_random_string + "\.jpg" );
           cloudinary.uploader.upload("public/" + my_random_string + "\.jpg", function(result) {
-            console.log(result)
+            console.log(result);
+            sendTextMessage(senderID, "The photo was saved to " + result.secure_url );
            });
 		//var wgetjson = JSON.parse(stderr);
   		//console.log('Program stderr:', wgetjson);
