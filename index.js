@@ -488,7 +488,7 @@ function receivedMessage(event) {
 		//console.log(5);
 		//break;
 		case 'cloudinary':
-		sendCloudinaryImage(senderID, "Jeanette.jpg");
+		sendCloudinaryImage(senderID, "https://res.cloudinary.com/hdhsnzuu1/image/upload/v1519287838/yw7fsuciglz1miamcauh.jpg");
 		break;
 
 	case 'fmlogo':
