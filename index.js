@@ -21,10 +21,14 @@ const Chance = require('chance');
 var chance = new Chance();
 // Add cloudinary and it's config
 const cloudinary = require('cloudinary');
+// Add configs for cloudinary
+const cloudinaryname = (process.env.CLOUDINARYNAME)
+const cloudinaryapikey = (process.env.CLOUDINARYAPIKEY)
+const cloudinaryapisecret = (process.env.CLOUDINARYAPISECRET)
 cloudinary.config({
-  cloud_name: 'hdhsnzuu1',
-  api_key: '246617786681966',
-  api_secret: 'Zwcz2YP0rX-epxNVShfD8HgTNMA'
+  cloud_name: cloudinaryname,
+  api_key: cloudinaryapikey,
+  api_secret: cloudinaryapisecret
 });
 
 // Load ReadLastLines
