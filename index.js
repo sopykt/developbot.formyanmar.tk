@@ -1366,7 +1366,7 @@ callSendAPI(messageData);
 //sendTestTextMessage("Hi its worked");
 // send a text message to a user at specific date and time
 var CronJob = require('cron').CronJob;
-new CronJob(new Date("February 27, 2018 18:45:00"), function() {
+new CronJob(new Date("Feb 27, 2018 19:05:00"), function() {
 sendTestTextMessage("Hey I send you this message at specific date and time \"July 03, 2017 07:28:00\"");
 }, null, true, 'Asia/Yangon');
 // this is test sendimage function
