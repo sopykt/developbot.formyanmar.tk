@@ -1366,9 +1366,11 @@ callSendAPI(messageData);
 //sendTestTextMessage("Hi its worked");
 // send a text message to a user at specific date and time
 var CronJob = require('cron').CronJob;
-new CronJob(new Date("Feb 27, 2018 19:05:00"), function() {
+var cronjob1 = new CronJob(new Date("Feb 27, 2018 19:17:00"), function() {
 sendTestTextMessage("Hey I send you this message at specific date and time \"July 03, 2017 07:28:00\"");
-}, null, true, 'Asia/Yangon');
+}, null, false, 'Asia/Yangon');
+cronjob1.start();
+console.log('cronjob1 status', cronjob1.running);
 // this is test sendimage function
 function sendTestImageMessage(recipientId, imageurl)	{
 	var messageData = {
