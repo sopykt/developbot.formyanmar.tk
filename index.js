@@ -390,12 +390,10 @@ function receivedMessage(event) {
 	  var buy_b = messageText.match(/ဝယ်/gi);
 	  var antisnakevenom_b = messageText.match(/မြွေဆိပ်ဖြေဆေး/gi);
 
-    var testmessage = messageText.match(/test/gi);
-
     if (who != null && you != null) {
       sendTextMessage(senderID, "I have been asked not to discuss my identity online.");
     }
-    else if (testmessage != null) {
+    else if (messageText === "test") {
       function sendconvomessage() {
         sendTextMessage(senderID, "Now said something");
         var usersaid = messageText;
@@ -404,7 +402,7 @@ function receivedMessage(event) {
           }
         }
       }
-    
+
     else if (what != null && developbot != null) {
       sendTextMessage(senderID, "Developbot is the project for developing bot in facebook messenger platform by Dr. Soe Paing.");
     }
