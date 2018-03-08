@@ -401,6 +401,7 @@ function receivedMessage(event) {
           sendTextMessage(senderID, "You said " + usersaid);
           }
         }
+        sendconvomessage();
       }
 
     else if (what != null && developbot != null) {
