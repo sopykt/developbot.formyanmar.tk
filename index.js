@@ -390,9 +390,17 @@ function receivedMessage(event) {
 	  var buy_b = messageText.match(/ဝယ်/gi);
 	  var antisnakevenom_b = messageText.match(/မြွေဆိပ်ဖြေဆေး/gi);
 
+    var testmessage = messageText.match(/test/gi);
+
     if (who != null && you != null) {
       sendTextMessage(senderID, "I have been asked not to discuss my identity online.");
-    }else if (what != null && developbot != null) {
+    }
+    else if (testmessage != null) {
+      sendTextMessage(senderID, "Type somethig") {
+        sendTextMessage(senderID, "You said " + messageText);
+      }
+    }
+    else if (what != null && developbot != null) {
       sendTextMessage(senderID, "Developbot is the project for developing bot in facebook messenger platform by Dr. Soe Paing.");
     }
     else if (anti != null && snake != null && buy != null) {
