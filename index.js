@@ -396,6 +396,7 @@ function receivedMessage(event) {
     else if (messageText === "test") {
       function sendconvomessage() {
         sendTextMessage(senderID, "Now said something");
+        return;
         var usersaid = messageText;
         if (usersaid) {
           sendTextMessage(senderID, "You said " + usersaid);
