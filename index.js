@@ -396,8 +396,13 @@ function receivedMessage(event) {
       sendTextMessage(senderID, "I have been asked not to discuss my identity online.");
     }
     else if (testmessage != null) {
-      sendTextMessage(senderID, "Type somethig") {
-        sendTextMessage(senderID, "You said " + messageText);
+      function sendconvomessage() {
+        sendTextMessage(senderID, "Now said something");
+        var usersaid = messageText;
+        if (usersaid) {
+          sendTextMessage(senderID, "You said " + usersaid);
+          }
+        }
       }
     }
     else if (what != null && developbot != null) {
