@@ -404,7 +404,7 @@ function receivedMessage(event) {
           }
         }
       }
-    }
+    
     else if (what != null && developbot != null) {
       sendTextMessage(senderID, "Developbot is the project for developing bot in facebook messenger platform by Dr. Soe Paing.");
     }
