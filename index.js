@@ -561,6 +561,7 @@ function receivedMessage(event) {
 		break;
 
 	  case 'honey':
+    case 'ပျားရည်':
 		sendTestAudioMessage(senderID, "/recording/Apr-24-1-25-PM-Honey-MWD.mp3");
 		break;
 
